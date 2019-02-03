@@ -1,0 +1,109 @@
+.ba-filters {
+    .ba-box {
+        margin-bottom: 30px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+        }
+    }
+}
+
+.ba-filter-price {
+    font-size: 14px;
+    font-weight: 600;
+
+    input {
+        margin: 0 23px 0 14px;
+        min-width: 45px;
+        border: none;
+        text-align: center;
+        background-color: #edf0f2;
+
+        &:focus {
+            background-color: darken(#edf0f2, 5%);
+            border: none;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.ba-filter-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li+li {
+        margin-top: 10px;
+
+        @include breakpoint(large) {
+            margin-top: 30px;
+        }
+    }
+}
+
+.ba-check {
+    cursor: pointer;
+
+    input {
+        display: none;
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        font-size: 16;
+        font-weight: 700;
+
+        &::before {
+            content: '';
+            background: #edf0f2;
+            width: 14px;
+            height: 14px;
+            margin-right: 12px;
+        }
+    }
+
+    :checked~span {
+        &::before {
+            background-color: #fff;
+            box-shadow: inset 0 0 0 4px $primary-color;
+        }
+    }
+}
+
+@include breakpoint(small only) {
+    .ba-filter-col{
+        margin-bottom: 20px;
+    }
+    .ba-filters-wrap {
+        position: absolute;
+        left: 10px;
+        top: 100%;
+        right: 10px;
+        z-index: 1;
+        overflow: hidden;
+        pointer-events: none;
+    }
+
+    &.open {
+        pointer-events: initial;
+
+        .ba-filters {
+            transform: translateY(0);
+        }
+    }
+
+    .ba-filters {
+        background-color: #f4f6f8;
+        transition: transform 0.3s;
+        transform: translateY(-100%);
+    }
+}
+
+.position-relative {
+    position: relative;
+}

@@ -1,0 +1,41 @@
+.ba-sale{
+    background: #fff;
+    padding: 10px 0;
+
+    &-pick{
+        img{
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &-title{
+        &__main{
+            text-transform: uppercase;
+            color: #34404b;
+            font-weight: 900;
+            padding-bottom: 16px;
+            margin: 0;
+        }
+
+        &__sub{
+            font-size: 12px;
+        }
+    }
+
+    &-price{
+        color: $primary-color;
+        font-size: 22px;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        p{
+            padding-left: 21px;
+
+        }
+        svg{
+            fill:currentColor;
+        }
+    }
+}

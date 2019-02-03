@@ -1,0 +1,161 @@
+.ba-product{
+    background: $white;
+    text-align: center;
+    transition-property: box-shadow;
+    transition-duration: .3s;
+    margin-bottom: 30px;
+    &:hover{
+        box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+    }
+    &__link{
+        display: block;
+        padding: 30px 25px 25px;
+        color: $body-font-color; 
+        
+        &:hover, &:focus{
+            color: $primary-color;
+        }
+    }
+    &__img{
+        margin-bottom: 25px;        
+    }
+    &__title{
+        font-size: 18px;
+        margin-bottom: 26px;
+    }
+    &__price{
+        font-size: 18px;
+        color: $primary-color;
+        font-weight: 700;        
+    }
+}
+//=====
+.ba-product-meta{
+    padding:0 50px 30px;
+    @include breakpoint(large){
+        padding-top: 30px;
+    }
+    &__color{
+        margin-top: 25px;
+        display: flex;
+        justify-content: center; 
+    
+    }
+}
+.ba-color-radio{
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 3px;
+    input{
+        display: none;
+    }
+    &__val{
+        display: block;
+        height: 14px;
+        width: 14px;
+        border-radius: 50%;
+        background: $black;
+        transition: opacity .3s, box-shadow .3s;
+        background-color: currentColor;
+        :checked + &{
+            box-shadow: 0 0 0 2px #fff, 0 0 0 4px currentColor;
+        }
+    }
+    &:hover{
+        .ba-color-radio__val{
+            opacity: 0.6;
+        }
+    }
+}
+.ba-product-action{
+    border-top: 1px solid #f2f4f7;
+    margin-top: 30px;
+    padding-top: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    a, button{
+        margin: 0 14px;
+        color: $body-font-color;
+        &:hover, &:focus{
+            color: $primary-color;
+        }
+        svg{
+            stroke:currentColor;
+        }
+    }
+} 
+// Show product meta on hover
+@include breakpoint(large){
+    html:not([data-whatinput="touch"]){
+        .ba-product{
+            position: relative;
+            overflow: hidden;
+            &__link{
+                transition: transform .4s ease-in;  
+            }
+            &__price{
+                transition: opacity .2s ease-in;
+            }
+            &__img{
+                transition: transform .4s ease-in;           
+                transform-origin: 50% 100%;
+            }
+            &:hover{
+                .ba-product__link{
+                    transform: translateY(-130px);               
+                }
+                .ba-product__img{
+                    transform: scale(0.45)
+                }
+                .ba-product__price{
+                    opacity: 0;
+                }
+                .ba-product-meta{
+                    transform: translateY(0);
+                }            
+            }
+        }
+        .ba-product-meta{
+            transition: transform .4s ease-in;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $white;
+            transform: translateY(100%);
+        } 
+    }
+}
+// single
+.ba-single-product{
+    background: #fff;
+    padding: 40px 0 50px;
+    @include breakpoint(large){
+        padding: 100px 0 120px;        
+    }   
+}
+.ba-single-product-large-img{
+    text-align: center;
+    margin-bottom: 50px;
+    img{
+        margin: 0 auto;
+    }
+}
+.ba-single-product-thumbs{
+    &__item{
+        width: 100px !important; 
+        padding: 10px;
+        height: 70px;
+        background: $body-background;
+        margin: 0 8px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        transition: background .3s;
+        
+        &.slick-current{
+            background: $primary-color;
+        }
+    }
+}

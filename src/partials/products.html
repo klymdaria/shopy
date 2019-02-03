@@ -1,0 +1,48 @@
+<article class="ba-product">
+    <a class="ba-product__link" href="single.html">
+        <img class="ba-product__img" src="assets/img/products/ProductImg1.jpg" alt="Reebok Track Jacket">
+        <h3 class="ba-product__title"> Reebok Track Jacket </h3>
+        <div class="ba-product__price">100$</div>                       
+    </a>
+    <form class="ba-product-meta" method="post">
+        <div>sizes    :    s - m - l - xl</div>
+        <div class="ba-product-meta__color">
+            <label class="ba-color-radio">
+                <input checked type="radio" value="Red" name="color">
+                <span class="ba-color-radio__val" style="color: #e12e3f;"></span>                                
+            </label>
+            <label class="ba-color-radio">
+                <input type="radio" value="Black" name="color">          
+                <span class="ba-color-radio__val" style="color: #34404b;"></span>                                
+            </label>
+            <label class="ba-color-radio">
+                <input type="radio" value="Blue" name="color">                                
+                <span class="ba-color-radio__val" style="color: #3ab3ff;"></span>                                                                
+            </label>
+            <label class="ba-color-radio">
+                <input type="radio" value="Green" name="color">
+                <span class="ba-color-radio__val" style="color: #2fd967;"></span>                                
+            </label>
+        </div>
+        <div class="ba-product-action">
+            <a href="single.html" title="Got to product details">
+                <svg width="19" height="17">
+                    <use xlink:href="#icon-globe" />
+                </svg>            
+            </a>
+            <button type="submit" aria-label="Add to cart">
+                <svg width="22" height="21">
+                    <use xlink:href="#icon-add-to-cart" />
+                </svg>            
+            </button>
+            <button aria-label="Add to wishlist">
+                <svg width="19" height="16">
+                    <use xlink:href="#icon-like" />
+                </svg>            
+            </button>                            
+        </div>
+        <!-- /.ba-product-action -->
+        <input type="hidden" name="product_id" value="32">
+    </form>
+    <!-- /.ba-product-action -->
+</article>

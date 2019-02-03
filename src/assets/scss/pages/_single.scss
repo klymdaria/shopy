@@ -1,0 +1,119 @@
+.ba-single {
+    padding: 40px 15px 0;
+
+    @include breakpoint(medium) {
+        padding-top: 70px;
+    }
+
+    @include breakpoint(large) {
+        padding-top: 120px;
+    }
+}
+
+.ba-single-gallery {
+    margin-bottom: 10px;
+
+    a {
+        outline: none;
+    }
+
+    img {
+        height: 250px;
+        width: 100%;
+        object-fit: contain;
+    }
+}
+
+.ba-single-gallery-thumbs {
+    display: flex;
+
+    @include breakpoint(small down) {
+        margin-bottom: 40px;
+    }
+
+    .active {
+        background-color: $primary-color;
+
+        img {
+            opacity: 0.4;
+        }
+    }
+
+    a+a {
+        margin-left: 15px;
+    }
+
+    img {
+        height: 69px;
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+.ba-single-product-atributes {
+    padding: 10px 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+
+    @include breakpoint(large) {
+        padding: 30px 0;
+        margin-bottom: 40px;
+    }
+
+    border: 1px solid #edeff1;
+    border-width: 1px 0;
+}
+
+.ba-label{
+    display: flex;
+    align-items: center;
+    label{
+        margin-right: 20px;
+    }
+}
+
+.ba-single-product-price {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.ba-input-qty{
+    display: flex;
+    align-items: center;
+    input{
+        margin: 0;
+        width: auto;
+        padding: 0 5px;
+        border: none;
+        height: auto;
+        line-height: 1;
+        appearance: none;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary-color;
+        &:focus{
+            border: none;
+            background-color: #edeff1;
+        }
+        &::-webkit-inner-spin-button{
+            display: none;
+        }
+    }
+}
+
+.ba-single-product-action{
+    @include breakpoint(small only){
+        margin-top: 20px;
+    }
+    a + a,
+    a + button,
+    button + a,
+    button + button{
+        margin-left: 10px;
+        @include breakpoint(large){
+            margin-left: 25px;
+        }
+    }
+}
